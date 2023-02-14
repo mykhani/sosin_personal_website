@@ -1,0 +1,90 @@
+import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+import Icon from "../../components/icon/icon.js"
+import IconGroup from "../../components/icon-group/icon-group.js";
+import "./about.css"
+
+import Name from "./Name.svg";
+import Picture from "./picture.svg"
+import Role from "./Role.svg";
+import BtnEmail from "./Btn_Email.svg";
+import FacebookIcon from "./Facebook.svg"
+import LinkedInIcon from "./LinkedIn.svg"
+import InstagramIcon from "./Instagram.svg"
+
+class About extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+        this.state = { mounted: false };
+    }
+
+    componentDidMount() {
+        this.setState({ mounted: true });
+    }
+
+    social() {
+        return [
+            {
+                icon: LinkedInIcon,
+                url: "https://www.linkedin.com"
+            },
+            {
+                icon: FacebookIcon,
+                url: "https://www.facebook.com"
+            },
+            {
+                icon: InstagramIcon,
+                url: "https://www.instagram.com"
+            }];
+    }
+
+    caption() {
+        return
+    }
+    email() {
+        return 'sosinshafiq@gmail.com';
+    }
+
+    about() {
+        return `My name is Sosin. I have recently moved to stockholm, Sweden with my husband.
+Before that, I was working as a 2D game Artist and I always wanted to improve my 
+animation skills.I came to know about the Motion creative program at Hyper Island.
+It has been a great learning experience so far.Apart from learning the technical skills,
+    I have also realized the importance of learning how to work with People.`;
+    }
+
+    render() {
+        return <TransitionGroup component={null}>
+            <CSSTransition classNames="about" timeout={0} in={this.state.mounted} appear>
+                <div id="about-container">
+                    <div id="about-banner">
+                        <div id="about-name">
+                            <img src={Name} />
+                        </div>
+                        <div id="about-picture">
+                            <img src={Picture} />
+                        </div>
+                        <div id="about-role">
+                            <img src={Role} />
+                        </div>
+                    </div>
+
+                    <div id="about-description">{this.about()}</div>
+                    <div id="about-email">
+                        <div id="email">
+                            <a href="mailto: sosinshafiq.gmail.com">
+                                <img src={BtnEmail} />
+                            </a>
+                        </div>
+                    </div>
+
+                    <IconGroup data={this.social()}>
+                    </IconGroup>
+                </div >
+            </CSSTransition>
+        </TransitionGroup>
+    }
+}
+
+export default About;

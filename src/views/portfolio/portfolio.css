@@ -1,0 +1,20 @@
+.portfolio-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-right: 5%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    transition: opacity 1s ease-out;
+}
+
+.portfolio-appear {
+    opacity: 0;
+}
+
+.portfolio-appear-done {
+    opacity: 1;
+}

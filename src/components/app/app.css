@@ -1,0 +1,15 @@
+.app-container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transition: opacity 1s ease;
+    margin: auto;
+}
+
+.main-app-appear {
+    opacity: 0.01;
+}
+
+.main-app-appear-done {
+    opacity: 1;
+}

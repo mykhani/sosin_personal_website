@@ -1,0 +1,81 @@
+.navigation-header {
+    display: block;
+    padding-top: 5%;
+    height: 40%;
+
+}
+
+.navigation-container {
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 100%;
+    height: 30%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 10%;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.nav-item-group {
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* .nav-item:hover {
+    transform: translate(-0.25em, -0.25em);
+} */
+
+/* .nav-item:after {
+    content: '';
+    display: block;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    background: transparent;
+    transition: width .5s ease, background-color .5s ease;
+} */
+
+/* .nav-item:hover:after {
+    width: 100%;
+    background: yellow;
+} */
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+}
+
+#portfolio-btn {
+    font-family: "BellotaBOld";
+    font-size: 1.2rem;
+    color: #F8F8F8;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+#portfolio-btn img {
+    max-width: 100%;
+}
+
+#about-btn {
+    font-family: "BellotaBOld";
+    font-size: 1.2rem;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+
+#about-btn img {
+    max-width: 100%;
+}

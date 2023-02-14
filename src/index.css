@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'BellotaRegular';
+    src: url(./fonts/Bellota/Bellota-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BellotaBold';
+    src: url(./fonts/Bellota/Bellota-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BenchNineBold';
+    src: url(./fonts/BenchNine/BenchNine-Bold.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BenchNineRegular';
+    src: url(./fonts/BenchNine/BenchNine-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BenchNineLight';
+    src: url(./fonts/BenchNine/BenchNine-Light.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    background-color: black;
+    font-size: calc(15px + 0.390625vw);
+}
+
+#root {
+    /* height: 100vh; */
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    /* background-image: linear-gradient(180deg, rgba(250, 178, 224, 0) 0%, rgba(250, 178, 224, 0.045) 26.56%, rgba(250, 178, 224, 0.145) 52.08%, rgba(250, 178, 224, 0.5) 100%); */
+}
