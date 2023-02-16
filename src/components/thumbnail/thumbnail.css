@@ -1,20 +1,47 @@
 .thumbnail {
+    position: relative;
+    text-align: center;
     opacity: 1.0;
     width: 28%;
     /* background-color: yellow; */
     transition: opacity 0.2s ease-out;
     transition: scale 0.2s ease-out;
-    margin: 1% 1%;
+    margin: 1% 1% 1% 1%;
     border-radius: 1%;
     flex-shrink: 0;
-    min-width: 500px;
+    min-width: 400px;
+
 }
 
 .thumbnail img {
     max-width: 100%;
+    border-radius: 10%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.thumbnail:hover {
-    opacity: 1.0;
-    transform: scale(1.1);
+.thumbnail .thumbnail-text {
+    opacity: 0;
+    width: 100%;
+    /* width: 0; */
+    position: absolute;
+    color: #f8f8f8;
+    font-family: "BenchNineBold";
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+}
+
+.thumbnail:hover .thumbnail-text {
+
+    opacity: 1;
+}
+
+.thumbnail:hover img {
+    opacity: 0.2;
+    /* transform: scale(1.1); */
 }

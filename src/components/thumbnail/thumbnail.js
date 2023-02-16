@@ -1,14 +1,30 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./thumbnail.css"
 
 class Thumbnail extends React.Component {
     constructor(props) {
         super(props);
-        this.imgRef = React.createRef();
+    }
+
+    handleMouseEnter = () => {
+
+    }
+
+    handleMouseLeave = () => {
+
     }
 
     render() {
-        return <div className="thumbnail"><img ref={this.imgRef} src={this.props.image.urls.regular} /></div>
+        let id = this.props.id;
+
+        return <div className="thumbnail" >
+            <Link to={'/portfolio/' + id}>
+                <img src={this.props.image} />
+                <div className='thumbnail-text'>{this.props.title}</div>
+            </Link>
+        </div>
+
     }
 }
 

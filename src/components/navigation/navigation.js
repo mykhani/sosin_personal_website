@@ -2,13 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./navigation.css"
 
-import Logo from "./Logo.png"
-import LogoGif from "./Logo.gif"
-import BtnAbout from "./Btn_About.svg";
-import BtnAboutSelected from "./Btn_About_selected.svg"
+import Logo from "./resources/Logo.png"
+import LogoGif from "./resources/Logo.gif"
+import BtnAbout from "./resources/Btn_About.svg";
+import BtnAboutSelected from "./resources/Btn_About_selected.svg"
 
-import BtnPortfolio from "./Btn_Portfolio.svg"
-import BtnPortfolioSelected from "./Btn_Portfolio_selected.svg"
+import BtnPortfolio from "./resources/Btn_Portfolio.svg"
+import BtnPortfolioSelected from "./resources/Btn_Portfolio_selected.svg"
+import Kebab from "./resources/kebab.png"
 
 import {
     useLocation,
@@ -59,17 +60,27 @@ class Navigation extends React.Component {
                 <div className='logo' onMouseEnter={this.handleLogoMouseEnter} onMouseLeave={this.handleLogoMouseLeave}>
                     <Link to="/"><img src={animate_logo ? LogoGif : Logo} /></Link>
                 </div>
-                <div className="nav-item-group">
-                    <div className="nav-item" id="portfolio-btn">
-                        <Link to="/portfolio" className="nav-link" >
-                            <img src={(location === "/portfolio" ? BtnPortfolioSelected : BtnPortfolio)} />
-                        </Link>
+                <div className="links">
+                    <div className="nav-item-group">
+                        <div className="nav-item" id="portfolio-btn">
+                            <Link to="/portfolio" className="nav-link" >
+                                <img src={(location === "/portfolio" ? BtnPortfolioSelected : BtnPortfolio)} />
+                                {/* <img src={BtnPortfolioSelected} className={(location === "/portfolio" ? 'nav-item-active' : 'nav-item-inactive')} />
+                            <img src={BtnPortfolio} className={(location === "/portfolio" ? 'nav-item-inactive' : 'nav-item-active')} /> */}
+                            </Link>
+                        </div>
+                        <div className="nav-item" id="about-btn">
+                            <Link to="/about" className="nav-link" >
+                                <img src={(location === "/about" ? BtnAboutSelected : BtnAbout)} />
+                                {/* <img src={BtnAboutSelected} className={(location === "/about" ? 'nav-item-active' : 'nav-item-inactive')} />
+                            <img src={BtnAbout} className={(location === "/about" ? 'nav-item-inactive' : 'nav-item-active')} /> */}
+                            </Link>
+                        </div>
+
                     </div>
-                    <div className="nav-item" id="about-btn">
-                        <Link to="/about" className="nav-link" >
-                            <img src={(location === "/about" ? BtnAboutSelected : BtnAbout)} />
-                        </Link>
-                    </div>
+                    {/* <div className="nav-item-kebab">
+                        <img src={Kebab} />
+                    </div> */}
                 </div>
             </div>
         </div>

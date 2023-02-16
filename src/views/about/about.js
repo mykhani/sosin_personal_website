@@ -2,15 +2,13 @@ import React from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Icon from "../../components/icon/icon.js"
 import IconGroup from "../../components/icon-group/icon-group.js";
+import "bootstrap-icons/font/bootstrap-icons.css"
 import "./about.css"
 
-import Name from "./Name.svg";
-import Picture from "./picture.svg"
-import Role from "./Role.svg";
-import BtnEmail from "./Btn_Email.svg";
-import FacebookIcon from "./Facebook.svg"
-import LinkedInIcon from "./LinkedIn.svg"
-import InstagramIcon from "./Instagram.svg"
+import Name from "./resources/Name.svg";
+import Picture from "./resources/picture.svg"
+import Role from "./resources/Role.svg";
+import BtnEmail from "./resources/Btn_Email.svg";
 
 class About extends React.Component {
     constructor(props) {
@@ -21,22 +19,17 @@ class About extends React.Component {
 
     componentDidMount() {
         this.setState({ mounted: true });
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
     }
 
     social() {
-        return [
-            {
-                icon: LinkedInIcon,
-                url: "https://www.linkedin.com"
-            },
-            {
-                icon: FacebookIcon,
-                url: "https://www.facebook.com"
-            },
-            {
-                icon: InstagramIcon,
-                url: "https://www.instagram.com"
-            }];
+        return {
+            linkedin: "https://www.linkedin.com/in/sosin-shafiq",
+            instagram: "https://www.instagram.com/sosin_shafiq/"
+        };
     }
 
     caption() {
@@ -78,9 +71,12 @@ It has been a great learning experience so far.Apart from learning the technical
                             </a>
                         </div>
                     </div>
-
-                    <IconGroup data={this.social()}>
-                    </IconGroup>
+                    <div className='about-social'>
+                        <a className='about-icon' href='https://www.linkedin.com/in/sosin-shafiq' ><i className="bi bi-linkedin"></i></a>
+                        <a className='about-icon' href='https://www.instagram.com/sosin_shafiq' ><i className="bi bi-instagram"></i></a>
+                    </div>
+                    {/* <IconGroup data={this.social()}>
+                    </IconGroup> */}
                 </div >
             </CSSTransition>
         </TransitionGroup>

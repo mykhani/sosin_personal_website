@@ -1,0 +1,67 @@
+.project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    letter-spacing: 0.1rem;
+}
+
+.project-appear {
+    opacity: 0;
+}
+
+.project-appear-done {
+    opacity: 1;
+}
+
+.project-title {
+    color: white;
+    font-family: "BenchNineBold";
+    text-transform: capitalize;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* .project-video {
+    width: 100%;
+    min-height: 600px;
+}
+
+.project-video iframe {
+    display: block;
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+} */
+
+
+/* This is hacky taken from https: //stackoverflow.com/a/41660020 */
+.project-video {
+    /* width: 70%; */
+    min-width: 300px;
+    max-width: 1000px;
+    /* max-height: 600px; */
+}
+
+.project-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: fit;
+}
+
+.project-description {
+    color: #f8f8f8;
+    font-size: 1rem;
+    font-family: 'BenchNineRegular'
+}
+
+/* .project-video iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+} */
