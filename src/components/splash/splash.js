@@ -28,23 +28,31 @@ class Splash extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
-        this.duration = props.duration;
         this.component = props.component;
         this.state = { loading: false };
+        this.splashTimer = null;
 
     }
+
+
 
     componentDidMount() { // runs after the component output has been rendered to the DOM.
         this.setState({ loading: true });
 
-        this.splashTimer = setTimeout(() => {
-            this.splashTimeout();
-            this.props.router.navigate('/about')
-        }, this.duration)
+        let { duration } = this.props
+
+        if (duration > 0) {
+            this.splashTimer = setTimeout(() => {
+                this.splashTimeout();
+                this.props.router.navigate('/about')
+            }, duration);
+        }
     }
 
     componentWillUnmount() {
-        clearInterval(this.splashTimer);
+        if (this.splashTimer) {
+            clearInterval(this.splashTimer);
+        }
     }
 
     splashTimeout() {

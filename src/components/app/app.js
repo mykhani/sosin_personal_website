@@ -26,32 +26,19 @@ const navItems = [
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { mounted: false };
-    }
-
-    componentDidMount() {
-        this.setState({ mounted: true });
     }
 
     render() {
-        return (
-            <TransitionGroup component={null}>
-                <CSSTransition classNames="main-app" in={this.state.mounted} timeout={300} appear>
-                    <div className="app-container" >
-                        <BrowserRouter>
-                            {/* <Navigation /> */}
-                            <Routes>
-                                <Route exact path="/" element={<Splash duration={3000} />} />
-                                <Route exact path="/portfolio" element={<><Navigation /><Portfolio /></>} />
-                                <Route path="/portfolio/:id" element={<><Navigation /><Project /></>} />
-                                <Route exact path="/about" element={<><Navigation /><About /></>} />
-                            </Routes>
-                        </BrowserRouter >
-                    </div >
-                </CSSTransition>
-            </TransitionGroup>
-
-        )
+        return <div className="app-container" >
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<Splash duration={3000} />} />
+                    <Route exact path="/portfolio" element={<Portfolio />} />
+                    <Route path="/portfolio/:id" element={<Project />} />
+                    <Route exact path="/about" element={<About />} />
+                </Routes>
+            </BrowserRouter >
+        </div >
     }
 }
 

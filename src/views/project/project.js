@@ -1,6 +1,9 @@
 import React from "react";
 import "./project.css"
+import Splash from "../../components/splash/splash.js";
+import Navigation from "../../components/navigation/navigation.js";
 import projects from "./projects/projects.json"
+import View from "../../components/view/view.js"
 
 // import Video1 from "./resources/1.mp4";
 // import Video2 from "./resources/2.mp4";
@@ -34,45 +37,42 @@ function withRouter(Component) {
     return ComponentWithRouterProp;
 }
 
-class Project extends React.Component {
+class Project extends View {
     constructor(props) {
         super(props);
         this.props = props;
-        this.state = { mounted: false }
-    }
-
-    componentDidMount() {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
-
-        this.setState({ mounted: true });
-        console.log(this.props)
+        // this.state = { mounted: false }
     }
 
     render() {
+        if (!this.state.loaded) {
+            return <Splash duration={0} />
+        }
+
         let id = this.props.router.params.id;
 
         console.log(projects[id])
         let { title, video, description } = projects[id];
         let videoPath = process.env.PUBLIC_URL + video;
         console.log(videoPath)
-        return <TransitionGroup component={null}>
-            <CSSTransition classNames="project" timeout={0} in={this.state.mounted} appear>
-                <div className="project-container">
-                    <div className='project-title'>
-                        {title}
+        return <>
+            <Navigation />
+            <TransitionGroup component={null}>
+                <CSSTransition classNames="project" timeout={0} in={this.state.mounted} appear>
+                    <div className="project-container">
+                        <div className='project-title'>
+                            {title}
+                        </div>
+                        < div className='project-video'>
+                            {/* <video src={videoPath} controls loop autoplay /> */}
+                            <iframe src={video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
+                        </div>
+                        <div className="project-description">{description}</div>
                     </div>
-                    < div className='project-video'>
-                        {/* <video src={videoPath} controls loop autoplay /> */}
-                        <iframe src={video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                    <div className="project-description">{description}</div>
-                </div>
 
-            </CSSTransition>
-        </TransitionGroup >
+                </CSSTransition>
+            </TransitionGroup >
+        </>
     }
 }
 
