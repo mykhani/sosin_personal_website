@@ -12,6 +12,12 @@
     transition: opacity 1s ease-out;
 }
 
+@media (width < 600px) {
+    .portfolio-container {
+        padding-bottom: 10%;
+    }
+}
+
 .portfolio-appear {
     opacity: 0;
 }
