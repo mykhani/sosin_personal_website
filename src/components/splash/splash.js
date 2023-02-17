@@ -53,17 +53,10 @@ class Splash extends React.Component {
         console.log(this)
     }
 
-    renderSplash() {
+    render() {
         return <div className="splash">
             <img id="splash" src={SplashIcon} />
         </div>
-    }
-
-    render() {
-        // if (this.state.loading) return this.renderSplash();
-        return this.renderSplash();
-        // const Component = this.props.component;
-        // return <this.props.component />;
 
     }
 }

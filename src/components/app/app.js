@@ -39,12 +39,12 @@ class App extends React.Component {
                 <CSSTransition classNames="main-app" in={this.state.mounted} timeout={300} appear>
                     <div className="app-container" >
                         <BrowserRouter>
-                            <Navigation />
+                            {/* <Navigation /> */}
                             <Routes>
                                 <Route exact path="/" element={<Splash duration={3000} />} />
-                                <Route exact path="/portfolio" element={<Portfolio />} />
-                                <Route path="/portfolio/:id" element={<Project />} />
-                                <Route exact path="/about" element={<About />} />
+                                <Route exact path="/portfolio" element={<><Navigation /><Portfolio /></>} />
+                                <Route path="/portfolio/:id" element={<><Navigation /><Project /></>} />
+                                <Route exact path="/about" element={<><Navigation /><About /></>} />
                             </Routes>
                         </BrowserRouter >
                     </div >

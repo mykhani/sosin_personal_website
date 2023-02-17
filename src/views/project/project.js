@@ -65,8 +65,8 @@ class Project extends React.Component {
                         {title}
                     </div>
                     < div className='project-video'>
-                        <video src={videoPath} controls loop autoplay />
-                        {/* <iframe src={videos[id]} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe> */}
+                        {/* <video src={videoPath} controls loop autoplay /> */}
+                        <iframe src={video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div className="project-description">{description}</div>
                 </div>
