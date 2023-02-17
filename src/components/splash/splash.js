@@ -54,8 +54,10 @@ class Splash extends React.Component {
     }
 
     render() {
-        return <div className="splash">
-            <img id="splash" src={SplashIcon} />
+        return <div className="splash-container">
+            <div className="splash">
+                <img id="splash" src={SplashIcon} />
+            </div>
         </div>
 
     }

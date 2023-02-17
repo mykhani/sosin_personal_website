@@ -1,6 +1,6 @@
-.splash {
+.splash-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* main axis (horizontal) */
     justify-content: center;
     /* cross axis (vertical) */
@@ -8,20 +8,15 @@
     width: 100vw;
     height: 100vh;
     background-color: black;
-    /* width: 20%; */
 }
 
-.splash img {
-    max-width: 250px;
+.splash {
+    max-width: 200px;
     min-width: 100px;
     /* height: 30%; */
 
 }
 
-@media (width < 600px) {
-    .splash {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.splash img {
+    max-width: 100%;
 }
