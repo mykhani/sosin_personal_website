@@ -79,9 +79,7 @@
 
 
 .nav-item {
-    /* width: 50%; */
-    max-width: 200px;
-    min-width: 100px;
+    width: 150px;
     margin-left: 1%;
     margin-right: 1%;
 }

@@ -1,20 +1,17 @@
 .splash-container {
-    display: flex;
-    flex-direction: column;
-    /* main axis (horizontal) */
-    justify-content: center;
-    /* cross axis (vertical) */
-    align-items: center;
+    position: relative;
     width: 100vw;
     height: 100vh;
     background-color: black;
 }
 
 .splash {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 200px;
     min-width: 100px;
-    /* height: 30%; */
-
 }
 
 .splash img {
