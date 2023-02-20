@@ -1,4 +1,4 @@
-import React from "react";
+import React, { cloneElement } from "react";
 import "./project.css"
 import Splash from "../../components/splash/splash.js";
 import Navigation from "../../components/navigation/navigation.js";
@@ -50,11 +50,8 @@ class Project extends View {
         }
 
         let id = this.props.router.params.id;
+        let { title, video, description, role, tools, credits } = projects[id];
 
-        console.log(projects[id])
-        let { title, video, description } = projects[id];
-        let videoPath = process.env.PUBLIC_URL + video;
-        console.log(videoPath)
         return <>
             <Navigation />
             <TransitionGroup component={null}>
@@ -67,7 +64,34 @@ class Project extends View {
                             {/* <video src={videoPath} controls loop autoplay /> */}
                             <iframe src={video} frameborder="0" allow="autoplay; fullscreen; picture-in-picture"></iframe>
                         </div>
-                        <div className="project-description">{description}</div>
+                        {description &&
+
+                            <div className="project-section">
+                                <div className="section-heading">Description</div>
+                                <div className="section-content">{description}</div>
+                            </div>
+                        }
+                        {tools &&
+                            <div className="project-section">
+                                <div className="section-heading">Tools and Techniques</div>
+                                <div className="section-content">{tools}</div>
+                            </div>
+                        }
+                        {role &&
+                            <div className="project-section">
+                                <div className="section-heading">Role</div>
+                                <div className="section-content">{role}</div>
+                            </div>
+                        }
+
+                        {credits &&
+                            <div className="project-section">
+                                <div className="section-heading">Credits</div>
+                                {credits && credits.map(({ name, role }) => {
+                                    return <div key={name} className="section-content"><span className="credit-name">{name}</span> - <span className="credit-role">{role}</span></div>
+                                })}
+                            </div>
+                        }
                     </div>
 
                 </CSSTransition>

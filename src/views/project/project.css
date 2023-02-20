@@ -6,6 +6,10 @@
     padding-left: 10%;
     padding-right: 10%;
     letter-spacing: 0.1rem;
+
+    color: #f8f8f8;
+    font-size: 1rem;
+    font-family: 'BenchNineRegular'
 }
 
 .project-appear {
@@ -52,7 +56,32 @@
 .project-description {
     color: #f8f8f8;
     font-size: 1rem;
-    font-family: 'BenchNineRegular'
+    font-family: 'BenchNineRegular';
+    margin-bottom: 2rem;
+}
+
+.project-section {
+    color: #f8f8f8;
+    margin-bottom: 2rem;
+}
+
+.section-heading {
+    font-size: 2rem;
+    font-family: 'BenchNineBold';
+    /* margin-bottom: 2rem; */
+}
+
+.section-content {
+    font-size: 1rem;
+    font-family: 'BenchNineRegular';
+}
+
+.credit-name {
+    font-family: "BenchNineBold";
+}
+
+.credit-role {
+    font-family: "BenchNineRegular";
 }
 
 /* This is hacky taken from https://stackoverflow.com/a/41660020 */
@@ -62,6 +91,7 @@
     padding-bottom: 56%;
     /* Change this till it fits the dimensions of your video */
     position: relative;
+    margin-bottom: 3rem;
 }
 
 .project-video iframe {

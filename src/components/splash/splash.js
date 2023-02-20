@@ -3,6 +3,7 @@ import "./splash.css"
 import SplashIcon from "./splash.gif"
 
 import {
+    redirect,
     useLocation,
     useNavigate,
     useParams,
@@ -39,12 +40,11 @@ class Splash extends React.Component {
     componentDidMount() { // runs after the component output has been rendered to the DOM.
         this.setState({ loading: true });
 
-        let { duration } = this.props
+        let { duration = 3000 } = this.props
 
         if (duration > 0) {
             this.splashTimer = setTimeout(() => {
                 this.splashTimeout();
-                this.props.router.navigate('/about')
             }, duration);
         }
     }
@@ -57,7 +57,18 @@ class Splash extends React.Component {
 
     splashTimeout() {
         console.log("Splash timeout!");
+        console.log(this.props.redirect)
         this.setState({ loading: false })
+        console.log(this.props.router)
+
+        let { redirect } = this.props;
+
+        if (redirect) {
+            this.props.router.navigate(redirect)
+        } else {
+            this.props.router.navigate(-1) /* go back */
+        }
+
         console.log(this)
     }
 

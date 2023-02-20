@@ -32,7 +32,7 @@ class App extends React.Component {
         return <div className="app-container" >
             <BrowserRouter>
                 <Routes>
-                    <Route exact path="/" element={<Splash duration={3000} />} />
+                    <Route exact path="/" element={<Splash duration={3000} redirect="/portfolio" />} />
                     <Route exact path="/portfolio" element={<Portfolio />} />
                     <Route path="/portfolio/:id" element={<Project />} />
                     <Route exact path="/about" element={<About />} />
