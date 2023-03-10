@@ -95,11 +95,28 @@ class Kindness extends React.Component {
             <div className="project-section">  {/* characters */}
                 <div className="section-subheading">Character Design</div>
                 <div className="characters-grid">
-                    <img src={Ana} />
-                    <img src={Katt} />
-                    <img src={Lee} />
-                    <img src={Lilly} />
-                    <img src={Sam} />
+                    <div className="character">
+                        <img src={Ana} />
+                        <div>Ana</div>
+                    </div>
+                    <div className="character">
+                        <img src={Katt} />
+                        <div>Katt </div>
+                    </div>
+                    <div className="character">
+                        <img src={Lee} />
+                        <div> Lee </div>
+                    </div>
+
+                    <div className="character">
+                        <img src={Lilly} />
+                        <div>Lilly</div>
+                    </div>
+
+                    <div className="character">
+                        <img src={Sam} />
+                        <div>Sam</div>
+                    </div>
                 </div>
             </div>
 
