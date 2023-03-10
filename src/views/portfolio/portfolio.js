@@ -13,7 +13,7 @@ import Image4 from "./resources/4.gif";
 import Image5 from "./resources/5.gif";
 import Image6 from "./resources/6.gif";
 
-import projects from "../project/projects/projects.json"
+import { titles } from "../../projects/projects.js"
 
 let images = [
     Image1, Image2, Image3, Image4, Image5, Image6
@@ -39,7 +39,7 @@ class Project extends View {
             <TransitionGroup component={null}>
                 <CSSTransition classNames="portfolio" timeout={0} in={this.state.mounted} appear>
                     <div className="portfolio-container">
-                        {projects.map(({ title }, idx) => {
+                        {titles.map((title, idx) => {
                             return <Thumbnail key={idx} id={idx} image={images[idx]} title={title} />
                         })}
                     </div>

@@ -18,6 +18,51 @@ class About extends View {
     constructor(props) {
         super(props);
         this.props = props;
+
+        this.experience = [
+            {
+                period: "2019 - 2022",
+                company: "Freelance",
+                position: "Freelance Desginer",
+                location: "Remote",
+                description: `Worked on various projects related to mobile games for 
+                Android and iOS and online games like slots, casino. Also designed logos,
+                web and promotional material.`
+            },
+            {
+                period: "2016 - 2017",
+                company: "Big Immersive",
+                position: "Senior CG Artist",
+                location: "Lahore, Pakistan",
+                description: `Designed concept art, 2D assets, UI, and post-production material
+                for several in-house games. Co-ordinated with dev and management teams for the
+                successful completion of projects.`
+            },
+            {
+                period: "2014 - 2016",
+                company: "Regexsoft",
+                position: "CG Artist",
+                location: "Lahore, Pakistan",
+                description: `Designed 2D assets, UI, characters and levels for different 
+                client mobile game projects.`
+            }
+        ];
+
+        this.education = [
+            {
+                program: "Motion Creative",
+                school: "HyperIsland",
+                location: "Stockholm, Sweden",
+                period: "2022 - 2023"
+            },
+            {
+                program: "BFA Visual Communication Design",
+                school: "Beaconhouse National University",
+                location: "Lahore, Pakistan",
+                period: "2009 - 2013"
+            }
+        ];
+
     }
 
     social() {
@@ -41,7 +86,7 @@ After moving to Stockholm from Hong Kong, I decided to learn something new and g
 I am very enthusiastic about telling a story through animation and inculcate the ideas of inclusion and diversity through my work.
 
 A bit about my technical skills - I am very proficient in doing frame-by-frame animation in Photoshop. Drawing and Illustration
-by hand is something that comes naturally, but I am slowly adding another animations tools like After-effects and Cinema4D to my repertoire as well.
+by hand is something that comes naturally, but I am slowly adding another animation tools like After-effects and Cinema4D to my repertoire as well.
 I have also learnt about story boarding, project management, building teams, and working effectively as a group of diverse people. 
 
 Thanks to the amazing teachings at HyperIsland, I feel I have grown a lot as a person and cannot wait to take on a new challenge and make a difference..!!` ;
@@ -60,9 +105,9 @@ Thanks to the amazing teachings at HyperIsland, I feel I have grown a lot as a p
         return <>
             <Navigation />
             <TransitionGroup component={null}>
-                <CSSTransition classNames="about" timeout={0} in={this.state.mounted} appear>
-                    <div id="about-container">
-                        <div id="about-banner">
+                <CSSTransition classNames="about-container" timeout={0} in={this.state.mounted} appear>
+                    <div className="about-container">
+                        <div className="about-banner">
                             <div id="about-name">
                                 <img src={Name} />
                             </div>
@@ -73,18 +118,60 @@ Thanks to the amazing teachings at HyperIsland, I feel I have grown a lot as a p
                                 <img src={Role} />
                             </div>
                         </div>
-                        <div id="about-description">
-                            {this.about()}</div>
-                        <div id="about-email">
-                            <div id="email">
-                                <a href="mailto: sosinshafiq.gmail.com">
-                                    <img src={BtnEmail} />
-                                </a>
+
+                        <div className="about-content">
+                            <div className="about-section">
+                                <div className="about-section-content">
+                                    {this.about()}
+                                </div>
                             </div>
-                        </div>
-                        <div className='about-social'>
-                            <a className='about-icon' href='https://www.linkedin.com/in/sosin-shafiq' ><i className="bi bi-linkedin"></i></a>
-                            <a className='about-icon' href='https://www.instagram.com/sosin_shafiq' ><i className="bi bi-instagram"></i></a>
+
+
+                            <div className="about-section">
+                                <div className="about-section-heading" >Education</div>
+                            </div>
+
+                            {
+                                this.education.map(({ program, school, location, period }) => {
+                                    return <div className="about-section">
+                                        <div className="about-section-subheading">{program}</div>
+                                        <div className="about-section-content">{school}</div>
+                                        <div className="about-section-content">{location}</div>
+                                        <div className="about-section-content">{period}</div>
+
+                                    </div>
+                                })
+                            }
+
+                            <div className="about-section">
+                                <div className="about-section-heading" >Experience</div>
+                            </div>
+
+                            {
+                                this.experience.map(({ period, company, position, location, description }) => {
+                                    return <div className="about-section">
+                                        <div className="about-section-subheading">{company}</div>
+                                        <div className="about-section-content">{period}</div>
+                                        <div className="about-section-content">{position}</div>
+                                        <div className="about-section-content">{location}</div>
+                                        <div className="about-section-content">{description}</div>
+
+                                    </div>
+                                })
+                            }
+
+                            <div id="about-email">
+                                <div id="email">
+                                    <a href="mailto: sosinshafiq.gmail.com">
+                                        <img src={BtnEmail} />
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div className='about-social'>
+                                <a className='about-icon' href='https://www.linkedin.com/in/sosin-shafiq' ><i className="bi bi-linkedin"></i></a>
+                                <a className='about-icon' href='https://www.instagram.com/sosin_shafiq' ><i className="bi bi-instagram"></i></a>
+                            </div>
                         </div>
                         {/* <IconGroup data={this.social()}>
                     </IconGroup> */}
