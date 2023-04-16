@@ -64,7 +64,7 @@ class Navigation extends React.Component {
                     <div className="nav-item-group">
                         <div className="nav-item" id="portfolio-btn">
                             <Link to="/portfolio" className="nav-link" >
-                                <img src={(location === "/portfolio" ? BtnPortfolioSelected : BtnPortfolio)} />
+                                <img src={(location.match("/portfolio") ? BtnPortfolioSelected : BtnPortfolio)} />
                                 {/* <img src={BtnPortfolioSelected} className={(location === "/portfolio" ? 'nav-item-active' : 'nav-item-inactive')} />
                             <img src={BtnPortfolio} className={(location === "/portfolio" ? 'nav-item-inactive' : 'nav-item-active')} /> */}
                             </Link>

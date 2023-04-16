@@ -1,0 +1,59 @@
+.pixel-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.pixel-asset {
+    width: 10%;
+    margin-top: 0.05rem;
+    margin-bottom: 0.05rem;
+    margin-left: 0.05rem;
+    margin-right: 0.05rem;
+    min-width: 100px;
+    max-width: 175px;
+    font-size: 1rem;
+    align-self: stretch;
+    overflow: hidden;
+    border-radius: 1%;
+    background-color: black;
+}
+
+.pixel-asset img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down
+}
+
+.pixel-screen {
+    width: 100%;
+    min-width: 300px;
+}
+
+.pixel-screen img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+.pixel-logo {
+    width: 30%;
+    display: block;
+    margin: auto;
+    font-size: 1rem;
+    padding-left: auto;
+    min-width: 300px;
+    /* align-self: stretch; */
+    overflow: hidden;
+    border-radius: 1%;
+    background-color: black;
+}
+
+.pixel-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
